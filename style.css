@@ -4,3 +4,13 @@
   --primary-color: #22254b;
   --secondary-color: #373b69;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
