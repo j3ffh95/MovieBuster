@@ -1,9 +1,9 @@
-// const ApiUrl = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1";
-const apiUrl =
-  "https://api.themoviedb.org/3/movie/now_playing?api_key=3fd2be6f0c70a2a598f084ddfb75487c&language=en-US&page=1";
+let API_KEY = config.API_KEY;
+
+// const ApiUrl = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api-key}&page=1";
+const apiUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`;
 const imagePath = "https://image.tmdb.org/t/p/w1280";
-const searchApiPath =
-  'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query="';
+const searchApiPath = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query="`;
 
 // Get elements from the doc
 const mainSection = document.querySelector("#main"),
@@ -40,7 +40,7 @@ function showMovies(movies) {
           ${overview}
         </div>
         `;
-    main.appendChild(movieEl);
+    mainSection.appendChild(movieEl);
   });
 }
 
@@ -62,7 +62,7 @@ form.addEventListener("submit", (e) => {
   if (searchTerm && searchTerm !== "") {
     getMovies(searchApiPath + searchTerm);
 
-    search.value = "";
+    searchApiPath.value = "";
   } else {
     window.location.reload();
   }
