@@ -1,4 +1,4 @@
-let API_KEY = config.API_KEY;
+let API_KEY = "3fd2be6f0c70a2a598f084ddfb75487c";
 
 // const ApiUrl = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api-key}&page=1";
 const apiUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`;
