@@ -57,6 +57,11 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   padding: 5rem 0;
+  /* position: relative; */
+}
+
+.movie-filter {
+  /* position: absolute; */
 }
 
 .movie {

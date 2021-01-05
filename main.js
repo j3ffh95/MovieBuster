@@ -10,8 +10,45 @@ const mainSection = document.querySelector("#main"),
   formElement = document.querySelector("#form"),
   seachElement = document.querySelector("#search");
 
+document
+  .querySelector('[title="popular"]')
+  .addEventListener("click", function () {
+    mainSection.innerHTML = "";
+    getMovies(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
+    );
+  });
+
+document
+  .querySelector('[title="upcoming"]')
+  .addEventListener("click", function () {
+    mainSection.innerHTML = "";
+    getMovies(
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
+    );
+  });
+document
+  .querySelector('[title="now-playing"]')
+  .addEventListener("click", function () {
+    mainSection.innerHTML = "";
+    getMovies(
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`
+    );
+  });
+document
+  .querySelector('[title="top-rated"]')
+  .addEventListener("click", function () {
+    mainSection.innerHTML = "";
+    getMovies(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
+    );
+  });
+
 // Get movies from API
-getMovies(apiUrl);
+window.addEventListener("DOMContentLoaded", function () {
+  getMovies(apiUrl);
+});
+// getMovies(apiUrl);
 
 async function getMovies(url) {
   const res = await fetch(url);
@@ -21,7 +58,7 @@ async function getMovies(url) {
 }
 
 function showMovies(movies) {
-  main.innerHTML = "";
+  // main.innerHTML = "";
 
   movies.forEach((movie) => {
     const { title, poster_path, vote_average, overview } = movie;
@@ -54,6 +91,7 @@ function getClassByRate(vote) {
   }
 }
 
+// Search feature
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
