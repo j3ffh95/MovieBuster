@@ -71,6 +71,12 @@ main {
   justify-content: space-between;
 }
 
+@media (max-width: 600px) {
+  .header-wrapper {
+    justify-content: center;
+  }
+}
+
 .movie-filter {
   display: flex;
   justify-content: space-evenly;
