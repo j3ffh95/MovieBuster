@@ -30,7 +30,7 @@ header {
 }
 
 .container {
-  width: min(70%, 50rem);
+  width: min(90%, 75rem);
   margin: 0 auto;
 }
 
