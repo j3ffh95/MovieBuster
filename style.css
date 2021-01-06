@@ -61,8 +61,14 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 5rem 0;
+  padding: 2rem 0;
   /* position: relative; */
+}
+
+.header-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .movie-filter {
