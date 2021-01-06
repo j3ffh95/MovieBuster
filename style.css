@@ -29,6 +29,8 @@ header {
   background-color: var(--secondary-color);
 }
 
+/* Utilities */
+
 .container {
   width: min(90%, 75rem);
   margin: 0 auto;
@@ -36,6 +38,43 @@ header {
 
 .logo {
   margin: 0;
+}
+
+.btn {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  border-radius: 0.6em;
+  color: #013a63;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 0.8em 1.5em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #fff;
+  outline: 0;
+}
+
+.first {
+  border-color: #0096c7;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #0096c7 inset, 0 0 0 0 #013a63;
+  transition: all 150ms ease-in-out;
+}
+
+.first:hover,
+.first:focus {
+  box-shadow: 0 0 10px 0 #0077b6 inset, 0 0 10px 4px #013a63;
 }
 
 .search {
@@ -80,7 +119,7 @@ main {
 .movie-filter {
   display: flex;
   justify-content: space-evenly;
-  padding: 2rem;
+  padding: 2rem 2rem 0;
 }
 
 .movie {
