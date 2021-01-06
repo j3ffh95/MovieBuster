@@ -29,6 +29,11 @@ header {
   background-color: var(--secondary-color);
 }
 
+.container {
+  width: min(70%, 50rem);
+  margin: 0 auto;
+}
+
 .logo {
   margin: 0;
 }
@@ -61,7 +66,9 @@ main {
 }
 
 .movie-filter {
-  /* position: absolute; */
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
 }
 
 .movie {
