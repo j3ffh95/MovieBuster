@@ -67,7 +67,7 @@ header {
 .first {
   border-color: #0096c7;
   color: #fff;
-  box-shadow: 0 0 40px 40px #0096c7 inset, 0 0 0 0 #013a63;
+  /* box-shadow: 0 0 40px 40px #0096c7 inset, 0 0 0 0 #013a63; */
   transition: all 150ms ease-in-out;
 }
 
@@ -117,7 +117,7 @@ main {
 
 .movie-filter {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 2rem 2rem 0;
 }
@@ -162,6 +162,11 @@ main {
 
 .movie-info span.red {
   color: red;
+}
+
+.success {
+  background-color: green;
+  color: black;
 }
 
 /* Overview overlay */

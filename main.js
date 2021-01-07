@@ -1,7 +1,7 @@
 let API_KEY = "3fd2be6f0c70a2a598f084ddfb75487c";
 
 // const ApiUrl = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api-key}&page=1";
-const apiUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`;
+const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
 const imagePath = "https://image.tmdb.org/t/p/w1280";
 const searchApiPath = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query="`;
 
@@ -10,10 +10,25 @@ const mainSection = document.querySelector("#main"),
   formElement = document.querySelector("#form"),
   seachElement = document.querySelector("#search");
 
+const movieFilterButtons = Array.from(
+  document.querySelectorAll(".movie-filter .btn")
+);
+
+function removeAllSuccessClass(buttonsArray, clickedBtn) {
+  buttonsArray.forEach((button) => {
+    if (button.classList.contains("success"))
+      button.classList.remove("success");
+  });
+
+  clickedBtn.target.classList.add("success");
+}
+
 document
   .querySelector('[title="popular"]')
-  .addEventListener("click", function () {
+  .addEventListener("click", function (e) {
     mainSection.innerHTML = "";
+    // switching between active
+    removeAllSuccessClass(movieFilterButtons, e);
     getMovies(
       `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
     );
@@ -21,24 +36,30 @@ document
 
 document
   .querySelector('[title="upcoming"]')
-  .addEventListener("click", function () {
+  .addEventListener("click", function (e) {
     mainSection.innerHTML = "";
+    // switching between active
+    removeAllSuccessClass(movieFilterButtons, e);
     getMovies(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
     );
   });
 document
   .querySelector('[title="now-playing"]')
-  .addEventListener("click", function () {
+  .addEventListener("click", function (e) {
     mainSection.innerHTML = "";
+    // switching between active
+    removeAllSuccessClass(movieFilterButtons, e);
     getMovies(
       `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`
     );
   });
 document
   .querySelector('[title="top-rated"]')
-  .addEventListener("click", function () {
+  .addEventListener("click", function (e) {
     mainSection.innerHTML = "";
+    // switching between active
+    removeAllSuccessClass(movieFilterButtons, e);
     getMovies(
       `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
     );
