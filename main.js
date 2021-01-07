@@ -8,19 +8,17 @@ const searchApiPath = `https://api.themoviedb.org/3/search/movie?api_key=${API_K
 // Get elements from the doc
 const mainSection = document.querySelector("#main"),
   formElement = document.querySelector("#form"),
-  seachElement = document.querySelector("#search");
-
-const movieFilterButtons = Array.from(
-  document.querySelectorAll(".movie-filter .btn")
-);
+  seachElement = document.querySelector("#search"),
+  movieFilterButtons = Array.from(
+    document.querySelectorAll(".movie-filter .btn")
+  );
 
 function removeAllSuccessClass(buttonsArray, clickedBtn) {
   buttonsArray.forEach((button) => {
-    if (button.classList.contains("success"))
-      button.classList.remove("success");
+    if (button.classList.contains("active")) button.classList.remove("active");
   });
 
-  clickedBtn.target.classList.add("success");
+  clickedBtn.target.classList.add("active");
 }
 
 document

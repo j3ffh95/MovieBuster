@@ -164,9 +164,8 @@ main {
   color: red;
 }
 
-.success {
+.active {
   background-color: green;
-  color: black;
 }
 
 /* Overview overlay */
