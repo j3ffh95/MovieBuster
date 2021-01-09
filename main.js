@@ -8,7 +8,7 @@ const searchApiPath = `https://api.themoviedb.org/3/search/movie?api_key=${API_K
 // Get elements from the doc
 const mainSection = document.querySelector("#main"),
   formElement = document.querySelector("#form"),
-  seachElement = document.querySelector("#search"),
+  searchElement = document.querySelector("#search"),
   movieFilterButtons = Array.from(
     document.querySelectorAll(".movie-filter .btn")
   );
@@ -114,7 +114,7 @@ function getClassByRate(vote) {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const searchTerm = search.value;
+  const searchTerm = searchElement.value;
 
   if (searchTerm && searchTerm !== "") {
     mainSection.innerHTML = "";
