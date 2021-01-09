@@ -116,7 +116,7 @@ form.addEventListener("submit", (e) => {
 
   const searchTerm = searchElement.value;
 
-  if (searchTerm && searchTerm !== "") {
+  if (searchTerm !== "") {
     mainSection.innerHTML = "";
     getMovies(searchApiPath + searchTerm);
 
