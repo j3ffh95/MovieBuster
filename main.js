@@ -69,9 +69,9 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 // getMovies(apiUrl);
 
-async function getMovies(url) {
-  const res = await fetch(url);
-  const data = await res.json();
+async function getMovies(apiUrl) {
+  const response = await fetch(apiUrl);
+  const data = await response.json();
 
   showMovies(data.results);
 }
