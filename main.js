@@ -140,4 +140,13 @@ function getClassByRate(voteNum) {
 //   }
 // });
 
-console.log(form);
+// Search for submit feature
+formElement.addEventListener("submit", (e) => {
+  // Preventing default from the submit event
+  e.preventDefault();
+
+  let searchTerm = searchElement.nodeValue;
+
+  if (searchTerm !== "") {
+  }
+});
