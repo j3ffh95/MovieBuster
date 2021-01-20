@@ -122,6 +122,9 @@ function showMovies(movies) {
         <p>${overview}</p>
       </div>
     `;
+
+    // Attached it to the  main section element
+    mainSection.appendChild(divMovieElement);
   });
 }
 
