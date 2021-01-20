@@ -76,31 +76,6 @@ async function getMovies(apiUrl) {
   showMovies(data.results);
 }
 
-// function showMovies(movies) {
-//   // main.innerHTML = "";
-
-//   movies.forEach((movie) => {
-//     const { title, poster_path, vote_average, overview } = movie;
-//     console.log(movie);
-
-//     const movieEl = document.createElement("div");
-//     movieEl.classList.add("movie");
-
-//     movieEl.innerHTML = `
-//             <img src="${imagePath + poster_path}" alt="${title}">
-//             <div class="movie-info">
-//           <h3>${title}</h3>
-//           <span class="${getClassByRate(vote_average)}">${vote_average}</span>
-//             </div>
-//             <div class="overview">
-//           <h3>Overview</h3>
-//           ${overview}
-//         </div>
-//         `;
-//     mainSection.appendChild(movieEl);
-//   });
-// }
-
 function showMovies(movies) {
   movies.forEach((movie) => {
     const { title, overview, poster_path, vote_average } = movie;
@@ -123,7 +98,7 @@ function showMovies(movies) {
       </div>
     `;
 
-    // Attached it to the  main section element
+    // Attached it to the  main section element using the appendChild method
     mainSection.appendChild(divMovieElement);
   });
 }
