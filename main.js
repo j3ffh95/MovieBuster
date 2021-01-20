@@ -145,8 +145,15 @@ formElement.addEventListener("submit", (e) => {
   // Preventing default from the submit event
   e.preventDefault();
 
-  let searchTerm = searchElement.nodeValue;
+  let searchTerm = searchElement.value;
 
   if (searchTerm !== "") {
+    mainSection.innerHTML = "";
+
+    getMovies(searchApiPath + searchTerm);
+
+    searchApiPath.value = "";
+  } else {
+    window.location.reload();
   }
 });
