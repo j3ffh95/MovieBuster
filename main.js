@@ -103,10 +103,21 @@ function showMovies(movies) {
   });
 }
 
-function getClassByRate(vote) {
-  if (vote >= 8) {
+// function getClassByRate(vote) {
+//   if (vote >= 8) {
+//     return "green";
+//   } else if (vote >= 5) {
+//     return "orange";
+//   } else {
+//     return "red";
+//   }
+// }
+
+// This function will return a color name depending what the vote average is;
+function getClassByRate(voteNum) {
+  if (voteNum >= 8) {
     return "green";
-  } else if (vote >= 5) {
+  } else if (voteNum >= 5) {
     return "orange";
   } else {
     return "red";
@@ -114,17 +125,19 @@ function getClassByRate(vote) {
 }
 
 // Search feature
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
 
-  const searchTerm = searchElement.value;
+//   const searchTerm = searchElement.value;
 
-  if (searchTerm !== "") {
-    mainSection.innerHTML = "";
-    getMovies(searchApiPath + searchTerm);
+//   if (searchTerm !== "") {
+//     mainSection.innerHTML = "";
+//     getMovies(searchApiPath + searchTerm);
 
-    searchApiPath.value = "";
-  } else {
-    window.location.reload();
-  }
-});
+//     searchApiPath.value = "";
+//   } else {
+//     window.location.reload();
+//   }
+// });
+
+console.log(form);
