@@ -78,15 +78,19 @@ async function getMovies(apiUrl) {
 
 function showMovies(movies) {
   movies.forEach((movie) => {
-    const { title, overview, poster_path, vote_average } = movie;
+    let { title, overview, poster_path, vote_average, backdrop_path } = movie;
 
     // Create div element of movie
     const divMovieElement = document.createElement("div");
     // add class of movie to the element
     divMovieElement.classList.add("movie");
 
-    // create the inside of the divMovieElement
-    divMovieElement.innerHTML = `
+    // if (poster_path === null) poster_path = backdrop_path;
+
+    // This if statement takes care if the movie has a image path, if it doesnt then we are not going to show it.
+    if (poster_path !== null) {
+      // create the inside of the divMovieElement
+      divMovieElement.innerHTML = `
       <img src='${imagePath + poster_path}' alt='${title} image' />
       <div class='movie-info'>
         <h3>${title}</h3>
@@ -98,20 +102,11 @@ function showMovies(movies) {
       </div>
     `;
 
-    // Attached it to the  main section element using the appendChild method
-    mainSection.appendChild(divMovieElement);
+      // Attached it to the  main section element using the appendChild method
+      mainSection.appendChild(divMovieElement);
+    }
   });
 }
-
-// function getClassByRate(vote) {
-//   if (vote >= 8) {
-//     return "green";
-//   } else if (vote >= 5) {
-//     return "orange";
-//   } else {
-//     return "red";
-//   }
-// }
 
 // This function will return a color name depending what the vote average is;
 function getClassByRate(voteNum) {
@@ -124,22 +119,6 @@ function getClassByRate(voteNum) {
   }
 }
 
-// Search feature
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-
-//   const searchTerm = searchElement.value;
-
-//   if (searchTerm !== "") {
-//     mainSection.innerHTML = "";
-//     getMovies(searchApiPath + searchTerm);
-
-//     searchApiPath.value = "";
-//   } else {
-//     window.location.reload();
-//   }
-// });
-
 // Search for submit feature
 formElement.addEventListener("submit", (e) => {
   // Preventing default from the submit event
@@ -151,8 +130,8 @@ formElement.addEventListener("submit", (e) => {
     mainSection.innerHTML = "";
 
     getMovies(searchApiPath + searchTerm);
-
-    searchApiPath.value = "";
+    // console.log(searchApiPath.value);
+    // searchElement.value = "";
   } else {
     window.location.reload();
   }
